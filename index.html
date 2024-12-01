@@ -3,30 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Web Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        a {
-            color: #007BFF;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Umer Abdullah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML page.</p>
-    <p>Learn more about <a href="https://www.example.com" target="_blank">HTML</a> here.</p>
+    <header>
+        <nav>
+            <div class="logo">Umer Abdullah</div>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <i data-feather="menu"></i>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Umer Abdullah,<br>an Aspiring Machine Learning Engineer.</h1>
+                <p>Learning and Builidng Solutions to real-world problems</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p> I am a final-year undergraduate student in Computer Science driven by a passion for leveraging data to create meaningful solutions and advancing the frontiers of research. My academic and professional focus lies at the intersection of machine learning, natural language processing, and multimodal learning. I have tackled complex projects such as drug-drug interaction prediction and integrating structured and unstructured data for advanced analytics. With a strong interest in exploring machine learning models, focusing on their optimization, efficiency, and scalability, I aim to bridge theoretical advancements with real-world applications. Skilled in Python, deep learning frameworks, and statistical analysis, I am eager to contribute to transformative projects that combine rigorous research with practical innovation to make a lasting impact in fields like healthcare and behavioral insights. Actively seeking internship opportunities to apply my research and technical skills to real-world challenges. <a href="https://github.com/incognito10100" class="link-button">Know more about me</a></p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i data-feather="code"></i>
+                    <h3>Python</h3>
+                    <div class="progress-bar"><div style="width: 90%"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i data-feather="cpu"></i>
+                    <h3>TensorFlow</h3>
+                    <div class="progress-bar"><div style="width: 65%"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i data-feather="box"></i>
+                    <h3>PyTorch</h3>
+                    <div class="progress-bar"><div style="width: 50%"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i data-feather="database"></i>
+                    <h3>SQL</h3>
+                    <div class="progress-bar"><div style="width: 70%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Modeling Drug-Drug Interaction (DDI) Prediction</h3>
+                    <p>An ML model for performing Named Entity Recognition to identify drug-drug interactions (DDIs) in textual data.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>Data Preprocessing</span>
+                        <span>RandomForest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://medium.com/@umer556601/modeling-drug-drug-interactions-using-machine-learning-f76a29dcc913" class="btn btn-small">Read</a>
+                        <a href="https://github.com/incognito10100/NERforDDI" class="btn btn-small">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Spatiotemporal Energy Forecasting Model</h3>
+                    <p>A model that integrates various data sources and techniques to forecast energy consumption patterns across time and space.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Data Integration</span>
+                        <span>Modeling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/incognito10100/HybridModel/blob/main/README.md" class="btn btn-small">Read</a>
+                        <a href="https://github.com/incognito10100/HybridModel" class="btn btn-small">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/incognito10100?tab=repositories" class="link-button"> Load more..</a>
+        </section>
+
+        <section id="research">
+            <h2>Research & Writing</h2>
+            <ul class="research-list">
+                <li>
+                    <a href="#">
+                        <h3>Mathematical Analysis of Activation Functions: Investigating Their Impact on Gradient Behavior and Network Stability</h3>
+                        <p>Ongoing research efforts</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/@umer556601/a-glance-into-the-most-popular-machine-learning-algorithms-4aa25e4832ca">
+                        <h3>A Glance into the Most popular Machine learning Algorithms</h3>
+                        <p>Blog post on Medium, Aug 2024</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/@umer556601/exploring-nlp-beyond-sentiment-analysis-8c1250ceeade">
+                        <h3>Exploring NLP beyond Sentiment Analysis</h3>
+                        <p>Blog post on Medium, July 2024</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div>
+                <p>
+                    I am eager to bring my skills and enthusiasm to your organization. With a strong passion for machine learning, data science, and their applications and a commitment to delivering impactful results, I am confident I can contribute meaningfully to your team. 
+                </p>
+                <p>
+                    Please feel free to reach out to me for any opportunities or further discussions. You can contact me via gmail :
+                <a href="#" id="mail-me" style="font-weight: bold; color: #007bff; text-decoration: none;">Mail Me</a>
+                <p id="email-display" style="margin-top: 10px; font-weight: bold; color: #000; display: none;"></p>
+                <p>I look forward to the possibility of working together!</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/umerabd/" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                <a href="https://github.com/incognito10100" aria-label="GitHub"><i data-feather="github"></i></a>
+                <a href="https://500px.com/manager?view=photos&filter=all" aria-label="camera"><i data-feather="camera"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Umer Abdullah. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
