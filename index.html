@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umer Abdullah</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="'stylesheet" href="styles.scss">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script src="https://unpkg.com/feather-icons"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
     <header>
@@ -18,8 +26,10 @@
             <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects-section">Projects</a></li>
                 <li><a href="#research">Research</a></li>
+                <li><a href="#services.services">Services</a></li>
+                <li><a href="#certifications.certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -28,111 +38,368 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Hi, I'm Umer Abdullah,<br>an Aspiring Machine Learning Engineer.</h1>
-                <p>Learning and Builidng Solutions to real-world problems</p>
+                <h2 class="greeting">Heyy there !</h2>
+                <h1>I'm Umer Abdullah,<br>Making AI Less Artificial, More Intelligent.</h1>
+                <p>I learn to build systems that understand humans, not just numbers !</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                    <a href="#projects-section" class="btn btn-primary">Explore My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
         </section>
+        
 
         <section id="about">
             <h2>About Me</h2>
-            <div class="about-content">
-                <p> I am a final-year undergraduate student in Computer Science driven by a passion for leveraging data to create meaningful solutions and advancing the frontiers of research. My academic and professional focus lies at the intersection of machine learning, natural language processing, and multimodal learning. I have tackled complex projects such as drug-drug interaction prediction and integrating structured and unstructured data for advanced analytics. With a strong interest in exploring machine learning models, focusing on their optimization, efficiency, and scalability, I aim to bridge theoretical advancements with real-world applications. Skilled in Python, deep learning frameworks, and statistical analysis, I am eager to contribute to transformative projects that combine rigorous research with practical innovation to make a lasting impact . Actively seeking internship opportunities to apply my research and technical skills to real-world challenges. <a href="https://github.com/incognito10100" class="link-button">Know more about me</a></p>
+            
+            <div class="bio-container">
+                
+                <div class="bio-content">
+                    <div class="info-card">
+                        <p>
+                            I'm a <strong class="highlight">final-year Computer Science student</strong> with an insatiable curiosity for transforming <em>complex data</em> into meaningful solutions. 
+                            My journey in technology extends far beyond lines of code – I'm <span class="highlight">fascinated by teaching machines to understand the nuances of human expression</span>, 
+                            much like we naturally interpret the world around us.
+                        </p>
+                    </div>
+        
+                    <div class="info-card">
+                        <h3>What Drives Me</h3>
+                        <p>
+                            My mind thrives on exploring possibilities. Whether I'm unraveling the complexities of drug-drug interactions or bridging the gap between structured and unstructured data, 
+                            you'll find me asking two essential questions: <span class="emphasis">"What if?"</span> and <span class="emphasis">"How can we make this better?"</span>
+                        </p>
+                    </div>
+        
+                    <div class="info-card">
+                        <h3>My Toolkit</h3>
+                        <p>
+                            <span class="highlight">Python</span> isn't just my programming language; it's my creative canvas. Through deep learning frameworks, I transform abstract theories into tangible applications.
+                        </p>
+                    </div>
+        
+                    <div class="info-card">
+                        <h3>Vision & Goals</h3>
+                        <p>
+                            Research is more than an academic endeavor—it's a bridge to real-world impact. Currently, I'm seeking internship opportunities to collaborate with forward-thinkers in AI.
+                        </p>
+                    </div>
+        
+                    <div class="quote">
+                        <p>"Not Your Typical Code Craftsman,</p>
+                        <p>Where neural networks meet human intuition."</p>
+                    </div>
+                </div>
             </div>
         </section>
+        
+        
+        
 
-        <section id="skills">
-            <h2>Skills</h2>
+        <section class="container" id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="filter-container">
+                <div class="scroll-indicator left">
+                    <button class="scroll-button" onclick="scrollFilters('left')">
+                        ←
+                    </button>
+                </div>
+                <div class="scroll-indicator right visible">
+                    <button class="scroll-button" onclick="scrollFilters('right')">
+                        →
+                    </button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Skills</button>
+                    <button class="filter-btn" data-filter="programming-languages">Programming Languages</button>
+                    <button class="filter-btn" data-filter="deep-learning-frameworks">Deep Learning</button>
+                    <button class="filter-btn" data-filter="ml-libraries">ML Libraries</button>
+                    <button class="filter-btn" data-filter="data-tools">Data Tools</button>
+                </div>
+            </div>
+
+            <!-- Rest of the skills grid remains the same -->
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i data-feather="code"></i>
-                    <h3>Python</h3>
-                    <div class="progress-bar"><div style="width: 90%"></div></div>
+                <!-- Programming Languages -->
+                <div class="skill-card programming-languages">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+                    <div class="skill-name">Python</div>
                 </div>
-                <div class="skill-card">
-                    <i data-feather="cpu"></i>
-                    <h3>TensorFlow</h3>
-                    <div class="progress-bar"><div style="width: 65%"></div></div>
+                <div class="skill-card programming-languages">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C">
+                    <div class="skill-name">C</div>
                 </div>
-                <div class="skill-card">
-                    <i data-feather="box"></i>
-                    <h3>PyTorch</h3>
-                    <div class="progress-bar"><div style="width: 50%"></div></div>
+                
+                <div class="skill-card programming-languages">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+                    <div class="skill-name">C++</div>
                 </div>
-                <div class="skill-card">
-                    <i data-feather="database"></i>
-                    <h3>SQL</h3>
-                    <div class="progress-bar"><div style="width: 70%"></div></div>
+                
+        
+                
+
+                <!-- Deep Learning -->
+                <div class="skill-card deep-learning-frameworks">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow">
+                    <div class="skill-name">TensorFlow</div>
+                </div>
+                <div class="skill-card deep-learning-frameworks">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="PyTorch">
+                    <div class="skill-name">PyTorch</div>
+                </div>
+                <div class="skill-card deep-learning-frameworks">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" alt="Keras">
+                    <div class="skill-name">Keras</div>
+                </div>
+                
+                <!-- ML Libraries -->
+                <div class="skill-card ml-libraries">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit-learn">
+                    <div class="skill-name">scikit-learn</div>
+                </div>
+                <div class="skill-card ml-libraries">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/69/XGBoost_logo.png" alt="XGBoost">
+                    <div class="skill-name">XGBoost</div>
+                </div>
+                <div class="skill-card ml-libraries">
+                    <img class="skill-icon" src="https://lightgbm.readthedocs.io/en/latest/_images/LightGBM_logo_black_text.svg" alt="LightGBM">
+                    <div class="skill-name">LightGBM</div>
+                </div>
+                
+                <!-- Data Tools -->
+                <div class="skill-card data-tools">
+                    <img class="skill-icon" src="https://pandas.pydata.org/static/img/pandas_mark.svg" alt="Pandas">
+                    <div class="skill-name">Pandas</div>
+                </div>
+                <div class="skill-card data-tools">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="NumPy">
+                    <div class="skill-name">NumPy</div>
+                </div>
+                <div class="skill-card data-tools">
+                    <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Apache Spark">
+                    <div class="skill-name">Apache Spark</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Modeling Drug-Drug Interaction (DDI) Prediction</h3>
-                    <p>An ML model for performing Named Entity Recognition to identify drug-drug interactions (DDIs) in textual data.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>NLP</span>
-                        <span>Data Preprocessing</span>
-                        <span>RandomForest</span>
+        <section class="projects-section" id="projects-section">
+          <div class="container">
+              <h2>Featured Projects</h2>
+              
+              <div class="projects-grid">
+                  <article class="project-card">
+                      <div class="card-header">
+                          <h3 class="project-title">Modeling Drug-Drug Interaction (DDI) Prediction</h3>
+                      </div>
+                      <div class="card-content">
+                          <p class="project-description">An ML model for performing Named Entity Recognition to identify drug-drug interactions (DDIs) in textual data.</p>
+                          <div class="tags-container">
+                              <span class="tag">Python</span>
+                              <span class="tag">NLP</span>
+                              <span class="tag">Data Preprocessing</span>
+                              <span class="tag">RandomForest</span>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <a href="https://medium.com/@umer556601/modeling-drug-drug-interactions-using-machine-learning-f76a29dcc913" class="project-link" target="_blank">
+                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                              </svg>
+                              Read More
+                          </a>
+                          <a href="https://github.com/incognito10100/NERforDDI" class="project-link" target="_blank">
+                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                              </svg>
+                              View Code
+                          </a>
+                      </div>
+                  </article>
+  
+                  <article class="project-card">
+                      <div class="card-header">
+                          <h3 class="project-title">Spatiotemporal Energy Forecasting Model</h3>
+                      </div>
+                      <div class="card-content">
+                          <p class="project-description">A model that integrates various data sources and techniques to forecast energy consumption patterns across time and space.</p>
+                          <div class="tags-container">
+                              <span class="tag">Python</span>
+                              <span class="tag">Data Integration</span>
+                              <span class="tag">Modeling</span>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <a href="https://github.com/incognito10100/HybridModel/blob/main/README.md" class="project-link" target="_blank">
+                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                              </svg>
+                              Read More
+                          </a>
+                          <a href="https://github.com/incognito10100/HybridModel" class="project-link" target="_blank">
+                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                              </svg>
+                              View Code
+                          </a>
+                      </div>
+                  </article>
+     
+                  <article class="project-card">
+                    <div class="card-header">
+                        <h3 class="project-title">FashionLens: Visual Recognition for E-Commerce Apparel</h3>
                     </div>
-                    <div class="project-links">
-                        <a href="https://medium.com/@umer556601/modeling-drug-drug-interactions-using-machine-learning-f76a29dcc913" class="btn btn-small">Read</a>
-                        <a href="https://github.com/incognito10100/NERforDDI" class="btn btn-small">GitHub</a>
+                    <div class="card-content">
+                        <p class="project-description">A fashion recommendation system that leverages machine learning to suggest personalized clothing items based on user preferences and trends.</p>
+                        <div class="tags-container">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Recommendation System</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <h3>Spatiotemporal Energy Forecasting Model</h3>
-                    <p>A model that integrates various data sources and techniques to forecast energy consumption patterns across time and space.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Data Integration</span>
-                        <span>Modeling</span>
+                    <div class="card-footer">
+                        <a href="https://github.com/incognito10100/FashionLens/blob/main/README.md" class="project-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                            </svg>
+                            Read More
+                        </a>
+                        <a href="https://github.com/incognito10100/FashionLens" class="project-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            View Code
+                        </a>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/incognito10100/HybridModel/blob/main/README.md" class="btn btn-small">Read</a>
-                        <a href="https://github.com/incognito10100/HybridModel" class="btn btn-small">GitHub</a>
-                    </div>
-                </div>
+                </article>
+                
+              </div>
+  
+              <div class="view-more">
+                  <a href="https://github.com/incognito10100?tab=repositories" class="view-more-button" target="_blank">
+                      View More Projects
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+      </section>
+         
+      <section id="research">
+        <h2>Research & Writing</h2>
+        <ul class="research-list">
+            <li>
+                <a href="#">
+                    <h3>Mathematical Analysis of Activation Functions: Investigating Their Impact on Gradient Behavior and Network Stability</h3>
+                    <p>Ongoing research efforts</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://medium.com/@umer556601/a-glance-into-the-most-popular-machine-learning-algorithms-4aa25e4832ca">
+                    <h3>A Glance into the Most popular Machine learning Algorithms</h3>
+                    <p>Blog post on Medium, Aug 2024</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://medium.com/@umer556601/exploring-nlp-beyond-sentiment-analysis-8c1250ceeade">
+                    <h3>Exploring NLP beyond Sentiment Analysis</h3>
+                    <p>Blog post on Medium, July 2024</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    
+    <section class="services" id="services">
+        <h2>Services</h2> 
+        <ul>
+          <li>
+            <span><i class="fa fa-search" aria-hidden="true"></i></span>
+            <h1>Research Assistance</h1>
+            <p>
+                Support in Developing ML models, preprocessing data, Data Extraction and documents research projects.
+            </p>
+          </li>
+          <li>
+            <span><i class="fa fa-upload" aria-hidden="true"></i></span>
+            <h1>Data Extraction</h1>
+            <p>
+                Extracting and processing data from various sources for analysis and model development.
+            </p>
+          </li>
+          <li>
+            <span><i class="fa fa-cogs" aria-hidden="true"></i></span>
+            <h1>Model Development</h1>
+            <p> Building and optimizing machine learning models to meet specific business or research needs.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="certifications" id="certifications">
+        <h2>Certifications & Badges</h2>
+        <div class="certifications-container">
+          <!-- Single Certification -->
+          <div class="certification-card">
+            <div class="certification-img">
+              <img src="UdemyCertificate.jpg" alt="Certification Image">
             </div>
-            <a href="https://github.com/incognito10100?tab=repositories" class="link-button"> Load more..</a>
-        </section>
+            <div class="certification-icon">
+              <img src="https://www.svgrepo.com/show/19516/certificate.svg" alt="Certificate Icon">
+            </div>
+            <h3>AI&ML, Data Science Bootcamp</h3>
+            <p>Issued by: Udemy</p>
+            <div class="issuer-logo">
+              <img src="udemy.png" alt="IBM Logo">
+            </div>
+            <p class="date">Date: May 2024</p>
+            <a href="https://www.udemy.com/certificate/UC-ddf87f13-7b09-4e3d-bad8-4677f8b4566e/" target="_blank" class="view-cert-btn">View Certificate</a>
+          </div>
+      
+          <div class="certification-card">
+            <div class="certification-img">
+              <img src="ForageCertification.jpg" alt="Certification Image">
+            </div>
+            <div class="certification-icon">
+              <img src="https://www.svgrepo.com/show/19516/certificate.svg" alt="Certificate Icon">
+            </div>
+            <h3>Data Science Job Simulation</h3>
+            <p>Issued by: Forage</p>
+            <div class="issuer-logo">
+              <img src="forage.jpg" alt="Codecademy Logo">
+            </div>
+            <p class="date">Date: December 2024</p>
+            <a href="foragepdf.pdf" target="_blank" class="view-cert-btn">View Certificate</a>
+          </div>
+      
+          <div class="certification-card">
+            <div class="certification-img">
+              <img src="badge.svg" alt="Certification Image">
+            </div>
+            <div class="certification-icon">
+              <img src="https://cdn-icons-png.flaticon.com/512/1435/1435715.png" alt="Badge Icon">
+            </div>
+            <h3>Tensor Flow Badge</h3>
+            <p>Issued by: Google</p>
+            <div class="issuer-logo">
+              <img src="images (3).png" alt="Coursera Logo">
+            </div>
+            <p class="date">Date: Jan 2025</p>
+            <a href="https://www.linkedin.com/posts/umerabd_tensorflow-badge-google-developer-program-activity-7280174996721713152-dpV1?utm_source=share&utm_medium=member_desktop" class="view-cert-btn">View Badge</a>
+          </div>
+        </div>
+      </section>
+      
 
-        <section id="research">
-            <h2>Research & Writing</h2>
-            <ul class="research-list">
-                <li>
-                    <a href="#">
-                        <h3>Mathematical Analysis of Activation Functions: Investigating Their Impact on Gradient Behavior and Network Stability</h3>
-                        <p>Ongoing research efforts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://medium.com/@umer556601/a-glance-into-the-most-popular-machine-learning-algorithms-4aa25e4832ca">
-                        <h3>A Glance into the Most popular Machine learning Algorithms</h3>
-                        <p>Blog post on Medium, Aug 2024</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://medium.com/@umer556601/exploring-nlp-beyond-sentiment-analysis-8c1250ceeade">
-                        <h3>Exploring NLP beyond Sentiment Analysis</h3>
-                        <p>Blog post on Medium, July 2024</p>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact">
+      
+    
+     <section id="contact">
             <h2>Contact Me</h2>
             <div>
                 <p>
-                    I am eager to bring my skills and enthusiasm to your organization. With a strong passion for machine learning, data science, and their applications and a commitment to delivering impactful results, I am confident I can contribute meaningfully to your team. 
+                    <strong class="highlight">Let's Connect:</strong> I'm always eager to engage in meaningful conversations about technology, innovation, and the future of machine learning. Whether you're interested in collaboration, have questions about my projects, or just want to exchange ideas, I'd love to connect.
                 </p>
                 <p>
                     Please feel free to reach out to me for any opportunities or further discussions. You can contact me via gmail :
@@ -144,9 +411,10 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/umerabd/" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
                 <a href="https://github.com/incognito10100" aria-label="GitHub"><i data-feather="github"></i></a>
+                <a href="https://www.instagram.com/inco_nito10100/" aria-label="instagram"><i data-feather="instagram"></i></a>
                 <a href="https://500px.com/manager?view=photos&filter=all" aria-label="camera"><i data-feather="camera"></i></a>
             </div>
-        </section>
+    </section>
     </main>
 
     <footer>
@@ -156,4 +424,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
